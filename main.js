@@ -21,6 +21,8 @@ let itemConfirm = true; // Confirm creación
 let itemDelete = true; // Confirm Borrado
 let idItm = 0; // Inicializo contador
 let itemBorrar = 0;
+let confirmacion1 = true; // Confirm Nuevo Item.
+let confirmacion2 = true; // confirm borrado
 
 botonIniciar.addEventListener("click", () => {
   // console.log(botonadd);
@@ -83,4 +85,29 @@ botonIniciar.addEventListener("click", () => {
   } while (itemConfirm);
   console.log("LISTADO DE PRODUCTOS INGRESADOS");
   console.table(listadoProductos);
+});
+
+botondelete.addEventListener("click", () => {
+  do {
+    itemBorrar = parseInt(prompt("Ingrese el número de item a borrar"));
+
+    const items = listadoProductos.filter((item) => {
+      return item.idItem === itemBorrar;
+    });
+
+    if (isNaN(itemBorrar)) {
+      confirmacion2 = false;
+    } else if (items.length > 0) {
+      confirmacion2 = confirm(`Desea quitar item #${itemBorrar} del listado?`);
+      switch (confirmacion2) {
+        case true:
+          let i = itemBorrar - 1;
+          delete listadoProductos[i];
+          console.log("LISTADO DE ITEMS INGRESADOS");
+          console.table(listadoProductos);
+      }
+    } else {
+      alert(`El item #${itemBorrar} no existe en el listado`);
+    }
+  } while (confirmacion2);
 });
