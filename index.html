@@ -10,37 +10,71 @@
     
 </head>
 <body>
-   <div class="container">
-         <h1>INGRESO DE PRODUCTOS</h1>
-            <h2>Habra la consola y haga click en INICIAR </h2>
-    <form action="">
-        <input id="prodcuto" type="text" placeholder="Ingrese el Producto" class="form control my-2">
-        <input id="cantidad" type="text" placeholder="Ingrese la cantidad" class="form control my-2">
-        <input id="precio" type="text" placeholder="Ingrese el precio" class="form control my-2">
-        
-        <button id="botonadd" class="bt btn-success" type="reset" >Agregar</button>
-        <button id="botondelete" class="bt btn-success" type="reset" >Borrar</button>
-        <button type="button" id="botonIniciar" class ="btn btn-success btn">Iniciar</button>
-        
-    </form>
+   <div class="container mt-5" >
+        <div class="text-center">
+            
 
-    <thead class="thead-inverse">
-    <table class="table" id="tabla">
+            
+         <h1 class="display-5 mb-5">INGRESO DE PRODUCTOS</h1>
+         <div class="main row justify-content-center">
+            <!-- <h2>Habra la consola y haga click en INICIAR </h2> -->
+    <form action="" id="producto_form" class="row justify-content-center mb-4" autocomplete="off">
+        <div class="col-8 col-md-6 mb-3">
+            <label for="producto">Ingrese el Producto</label>
+        <input class="form-control" id="producto" type="text" placeholder="Ingrese el Producto" class="form control my-2">
+        </div>
+        <div class="col-8 col-md-6 mb-3">
+            <label for="cantidad">Ingrese la Cantidad</label>
+        <input class="form-control" id="cantidad" type="text" placeholder="Ingrese la Cantidad" class="form control my-2">
+        </div>
+        <div class="col-8 col-md-6 mb-3">
+            <label for="precio">Ingrese el Precio</label>
+        <input class="form-control" id="precio" type="text" placeholder="Ingrese el Precio" class="form control my-2">
+        </div>
         
+        <div class="col-10" >
+        <input  class="btn btn-primary"  type="submit" value="Agregar"></input>
+        
+       <!-- <button type="button" id="botonIniciar" class ="btn btn-success btn">Iniciar</button> -->
+    </div>
+    </form>
+<div class="col-10 mt-5">
+    
+    <table class="table table-striped table-dark" id="tabla">
+        <thead>
         <tr>
-    <th> id</th>
+    <th> id</th> 
     <th>Producto</th>
     <th>cantidad</th>
     <th>precio</th>
     <th>acciones</th>
-        </tr>
+</tr>
+</thead>
+<tbody id="producto_lista">
+    <tr>
+        <td>1</td>
+        <td>CocaCola</td>
+        <td>100</td>
+        <td>150</td>
+        <td>
+            <a href="#" class="btn btn-warning btn-sm edit">Editar</a>
+            <a href="#" class="btn btn-danger btn-sm delete">Borrar</a>
+        </td>
+
+    </tr>
+
+</tbody>
+        
         <p id="demo"></p>
     </table>
-</thead>
-   
+</div>
+</div>
+
+</div>
 </div>
    
-    <script src="main.js"></script>
+    
+    <script src="main2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
