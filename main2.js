@@ -23,7 +23,8 @@ document.querySelector("#producto_lista").addEventListener("click", (e) => {
 });
 
 //Añadir Datos
-
+//Declaro counter
+let counter = 0;
 document.querySelector("#producto_form").addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -35,13 +36,16 @@ document.querySelector("#producto_form").addEventListener("submit", (e) => {
 
   //validar
   if (producto == "" || cantidad == "" || precio == "") {
-    showAlert("Por favor complete todos los campos", "danger");
+    alert("Por favor complete todos los campos", "danger");
   } else {
     if (selectedRow == null) {
       const list = document.querySelector("#producto_lista");
       const row = document.createElement("tr");
+      counter++; //Cada vez que entra, le suma 1 al counter y lo renderiza. de esta manera tenemos ID
 
+      //Agrego Counter al Row
       row.innerHTML = `
+         <td>${counter}</td>
          <td>${producto}</td>
          <td>${cantidad}</td>
          <td>${precio}</td>
@@ -51,7 +55,12 @@ document.querySelector("#producto_form").addEventListener("submit", (e) => {
         `;
       list.appendChild(row);
       selectedRow = null;
-      showAlert("Producto añadido Exitosamente", "succes");
+      alert("Producto añadido Exitosamente", "succes");
+
+      //Blanqueo valores
+      document.getElementById("producto").value = "";
+      document.getElementById("cantidad").value = "";
+      document.getElementById("precio").value = "";
     }
   }
 });
