@@ -1,4 +1,6 @@
 var selectedRow = null;
+let idItm = 0; // Inicializo contador
+
 //Mostrar Alertas
 function showAlert(message, className) {
   const div = document.createElement("div");
@@ -18,6 +20,7 @@ document.querySelector("#producto_lista").addEventListener("click", (e) => {
   target = e.target;
   if (target.classList.contains("delete")) {
     target.parentElement.parentElement.remove();
+    idItm--;
     showAlert("Producto Borrado con Exito", "danger");
   }
 });
@@ -26,7 +29,7 @@ document.querySelector("#producto_lista").addEventListener("click", (e) => {
 
 document.querySelector("#producto_form").addEventListener("submit", (e) => {
   e.preventDefault();
-
+  idItm++;
   //agarrar los valores
 
   const producto = document.querySelector("#producto").value;
@@ -42,6 +45,7 @@ document.querySelector("#producto_form").addEventListener("submit", (e) => {
       const row = document.createElement("tr");
 
       row.innerHTML = `
+         <td>${idItm}</td>
          <td>${producto}</td>
          <td>${cantidad}</td>
          <td>${precio}</td>
@@ -55,3 +59,5 @@ document.querySelector("#producto_form").addEventListener("submit", (e) => {
     }
   }
 });
+
+//-------------clase Carrito------------//

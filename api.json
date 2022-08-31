@@ -1,0 +1,38 @@
+[
+    {
+      "precio": 350,
+      "id": 1,
+      "title": "CocaCola",
+      "thumbnailUrl": "/img/cocacola.jpg"
+    },
+    {
+      "precio": 650,
+      "id": 2,
+      "title": "Pizza",
+      "thumbnailUrl": "img/pizza.jpg"
+    },
+    {
+      "precio": 120,
+      "id": 3,
+      "title": "Agua",
+      "thumbnailUrl": "https://picsum.photos/id/20/600"
+    },
+    {
+      "precio": 280,
+      "id": 4,
+      "title": "Quilmes",
+      "thumbnailUrl": "https://picsum.photos/id/30/600"
+    },
+    {
+      "precio": 390,
+      "id": 5,
+      "title": "Nachos",
+      "thumbnailUrl": "https://picsum.photos/id/40/600"
+    },
+    {
+      "precio": 350,
+      "id": 6,
+      "title": "Lays",
+      "thumbnailUrl": "https://picsum.photos/id/50/600"
+    }
+  ]
